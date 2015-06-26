@@ -9,16 +9,7 @@ L8NewCell是本程序使用的L8DynamicNewscell（自动布局）和L8ManualNews
 L8DynamicNewscell 自动布局cell类
 L8ManualNewsCell 手动布局cell类
 
-L8Label主要实现layoutSubviews方法，用来支持自动布局，如下：
--(void)layoutSubviews
-{
-    [super layoutSubviews];
-    //保证自动换行
-    self.preferredMaxLayoutWidth = self.bounds.size.width;
-    
-    [super layoutSubviews];
-}
-
+L8Label主要实现layoutSubviews方法，用来支持自动布局。
 
 自动布局是通过在updateConstraints方法中调整约束进行布局。
 手动布局就是在L8ManualNewsCell的layoutSubviews方法中通过计算子控件的frame控制布局。
